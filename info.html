@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ILAY ♡</title>
+ <link rel="icon" href="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/dbd9d226-449f-485d-8f2c-655a95dbcac7-removebg-preview.png?v=1737613451404" type="image/png">
+
+  <link rel="stylesheet" href="info.css">
+</head>
+<body>
+     <!-- Header avec navigation -->
+  <header>
+    <nav>
+      <!-- Logo -->
+  <ul>
+  <li class="logo">
+    <span>ILAY ♡</span>
+  </li>
+  <li>
+    <ul class="nav-links">
+      <li><a href="index.html">Gallery</a></li>
+    
+      <li><a href="info.html">Information</a></li>
+    </ul>
+  </li>
+
+        <!-- Icône pour changer le thème -->
+        <li class="theme-toggle">
+          <button id="theme-toggle-btn" aria-label="Changer le thème">
+            <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon hidden">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </svg>
+          </button>
+        </li>
+    <!-- Bouton toggle pour le menu (petits écrans) -->
+        <li>
+  <button class="menu-toggle" aria-label="Open Menu">☰</button>
+</li>
+    
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Overlay pour le menu des petits écrans -->
+  <div id="myNav" class="overlay">
+    <button class="closebtn">&times;</button>
+    <div class="overlay-content">
+      <a href="index.html">Gallery</a>
+  
+      <a href="info.html">Information</a>
+    </div>
+  </div>
+
+    <section id="info">
+      <div class="info-section">
+          <h1>Information</h1>
+          <h2>About ILAY Website</h2>
+          <p>
+              All the images displayed on the ILAY website do not belong to me. They are used solely for illustrative purposes 
+              and are not claimed as my property.
+          </p>
+      </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kristen Loves Ilay. All rights reserved.</p>
+    </footer>
+
+    <script src="info.js"></script>
+</body>
+</html>

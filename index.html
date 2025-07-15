@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7c0b9b5648e1d188" />
+  <title>ILAY ♡</title>
+<link rel="icon" href="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/dbd9d226-449f-485d-8f2c-655a95dbcac7-removebg-preview.png?v=1737613451404" type="image/png">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Header avec navigation -->
+  <header>
+    <nav>
+      <!-- Logo -->
+  <ul>
+  <li class="logo">
+    <span>ILAY ♡ </span>
+  </li>
+  <li>
+    <ul class="nav-links">
+      <li><a href="index.html">Gallery</a></li>
+    
+      <li><a href="info.html">Information</a></li>
+    </ul>
+  </li>
+
+        <!-- Icône pour changer le thème -->
+        <li class="theme-toggle">
+          <button id="theme-toggle-btn" aria-label="Changer le thème">
+            <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon hidden">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </svg>
+          </button>
+        </li>
+    <!-- Bouton toggle pour le menu (petits écrans) -->
+        <li>
+  <button class="menu-toggle" aria-label="Open Menu">☰</button>
+</li>
+    
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Overlay pour le menu des petits écrans -->
+  <div id="myNav" class="overlay">
+    <button class="closebtn">&times;</button>
+    <div class="overlay-content">
+      <a href="index.html">Gallery</a>
+
+      <a href="info.html">Information</a>
+    </div>
+     
+  </div>
+  
+    <section id="home">
+      <div class="carousel-container">
+          <div class="carousel">
+              <div class="slide active">
+                  <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/G1.jpg?v=1737351144706" alt="Image 1">
+              </div>
+              <div class="slide">
+                  <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/G2.jpg?v=1737351149962" alt="Image 2">
+              </div>
+              <div class="slide">
+                  <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/G3.jpg?v=1737351156725" alt="Image 3">
+              </div>
+          </div>
+          <button class="prev" onclick="changeSlide(-1)">❮</button>
+          <button class="next" onclick="changeSlide(1)">❯</button>
+          <div class="dots-container">
+              <span class="dot active" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+      </div>
+  </section>
+<main>
+  
+
+   
+  <section id="gallery-container">
+ 
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(2).jpg?v=1737351162294" alt="Image 1">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(2).jpg?v=1737351162294', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+      <p class="description">He finally caught you 😲❤️‍🔥.</p>
+    </div>
+
+    
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow.jpg?v=1737351165905" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow.jpg?v=1737351165905', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  
+   
+
+  
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/13246077-0931-4de9-8fcc-8b9dc11a33f9.jpg?v=1737554690961" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/13246077-0931-4de9-8fcc-8b9dc11a33f9.jpg?v=1737554690961', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+     
+    </div>
+    
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20-%20Passion.jpg?v=1737554699619" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20-%20Passion.jpg?v=1737554699619', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%E2%98%86.jpg?v=1737554685578" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%E2%98%86.jpg?v=1737554685578', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+    
+    </div>
+  
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20%26%20Jeong%20Taeui%20%5B%20Passion%20%5D%20(1).jpg?v=1737554924774" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20%26%20Jeong%20Taeui%20%5B%20Passion%20%5D%20(1).jpg?v=1737554924774', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+   
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%F0%9D%90%8F%F0%9D%90%80%F0%9D%90%92%F0%9D%90%92%F0%9D%90%88%F0%9D%90%8E%F0%9D%90%8D%20%E2%99%A1%20(1).jpg?v=1737554932726" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%F0%9D%90%8F%F0%9D%90%80%F0%9D%90%92%F0%9D%90%92%F0%9D%90%88%F0%9D%90%8E%F0%9D%90%8D%20%E2%99%A1%20(1).jpg?v=1737554932726', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+        <p class="description">Watching you while you sleep</p>
+    </div>
+    <!-- Deuxième élément -->
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Passion%20manhwa.jpg?v=1737555999341" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Passion%20manhwa.jpg?v=1737555999341', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+      <p class="description">Sometimes he has a sweet face, and sometimes he's just very intense</p>
+    </div>
+   
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Passion.jpg?v=1737554940868" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Passion.jpg?v=1737554940868', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20%5B%20Passion%20%5D.jpg?v=1737555104079" alt="Image 2">
+        <a href="#" 
+           class="icon download-icon" 
+           aria-label="Télécharger" 
+           onclick="downloadFile('https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20%5B%20Passion%20%5D.jpg?v=1737555104079', 'Ilay_Riegrow.jpg')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="gallery">
+  <script>
+    const images = [
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow.jpg?v=1737351165905",
+        name: "Ilay_Riegrow.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/ilay%20riegrow.jpg?v=1737648441044",
+        name: "ilay_riegrow.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/t%C3%A9l%C3%A9charger.jpg?v=1737648435370",
+        name: "telecharger.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(1).jpg?v=1737648430755",
+        name: "Ilay_Riegrow_1.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/t%C3%A9l%C3%A9charger%20(1).jpg?v=1737648426030",
+        name: "telecharger_1.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/t%C3%A9l%C3%A9charger%20(2).jpg?v=1737648421339",
+        name: "telecharger_2.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/t%C3%A9l%C3%A9charger%20(3).jpg?v=1737648417210",
+        name: "telecharger_3.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/t%C3%A9l%C3%A9charger%20(4).jpg?v=1737648405365",
+        name: "telecharger_4.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%C9%AA%CA%9F%E1%B4%80%CA%8F%20%C3%97%20%E1%B4%9B%E1%B4%80%E1%B4%87%E1%B4%9C%C9%AA.jpg?v=1737648401018",
+        name: "special_image.jpg",
+      },
+    {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/def9959d-badd-4ee1-87db-0ee561b68358.jpg?v=1737650468468",
+        name: "def9959d.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Passion_%20Ilay%20Riegrow.jpg?v=1737650469473",
+        name: "Passion_Ilay_Riegrow.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/ilay%20riegrow%20_%20Passion%20(1).jpg?v=1737650474715",
+        name: "ilay_riegrow_Passion_1.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/2d11bbae-c732-4c68-8504-a59d65641936.jpg?v=1737650478968",
+        name: "2d11bbae.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/237917d9-3754-4796-9745-b5702b2aa92a.jpg?v=1737650481843",
+        name: "237917d9.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(14).jpg?v=1737650486744",
+        name: "Ilay_Riegrow_14.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/41e62e60-01ef-4787-b655-5414cf13511d.jpg?v=1737650491508",
+        name: "41e62e60.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(13).jpg?v=1737650494339",
+        name: "Ilay_Riegrow_13.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20_%20Passion.jpg?v=1737650509326",
+        name: "Ilay_Riegrow_Passion.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(12).jpg?v=1737650519148",
+        name: "Ilay_Riegrow_12.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%F0%9D%93%9F%F0%9D%93%AA%F0%9D%93%BC%F0%9D%93%BC%F0%9D%93%B2%F0%9D%93%B8%F0%9D%93%B7.jpg?v=1737650528468",
+        name: "Special_Image.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20%5B%20Passion%20-%20Manhwa%20%5D.jpg?v=1737650541650",
+        name: "Ilay_Riegrow_Passion_Manhwa.jpg",
+      },
+    ];
+
+    images.forEach((image) => {
+      document.write(`
+        <div class="gallery-item">
+          <div class="image-container">
+            <img src="${image.src}" alt="Image">
+            <a href="#" 
+               class="icon download-icon" 
+               aria-label="Télécharger" 
+               onclick="downloadFile('${image.src}', '${image.name}')">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      `);
+    });
+
+    function downloadFile(url, filename) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.click();
+    }
+  </script>
+</div>
+    
+    <div class="gallery">
+  <script>
+    const newImages = [
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(8).jpg?v=1737648886580",
+        name: "Ilay_Riegrow_8.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(7).jpg?v=1737648889914",
+        name: "Ilay_Riegrow_7.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%3D)).jpg?v=1737648894057",
+        name: "Special_Image.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(6).jpg?v=1737648898418",
+        name: "Ilay_Riegrow_6.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/fc2eb1e0-77f5-4582-b63f-261a8213b41d.jpg?v=1737648902463",
+        name: "fc2eb1e0.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(5).jpg?v=1737648915115",
+        name: "Ilay_Riegrow_5.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%E0%BD%B2%E0%BE%80.jpg?v=1737648916320",
+        name: "Special_Text.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/865bf6e2-c00c-40d2-b66e-5b6fb3ba7573.jpg?v=1737648922622",
+        name: "865bf6e2.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/ed1ec5f4-6ca1-4b75-aff1-b6a9be440528.jpg?v=1737648923401",
+        name: "ed1ec5f4.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(2).jpg?v=1737648927149",
+        name: "Ilay_Riegrow_2.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(3).jpg?v=1737648937536",
+        name: "Ilay_Riegrow_3.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20riegrow%20(4).jpg?v=1737648945956",
+        name: "Ilay_Riegrow_4.jpg",
+      },
+    
+        {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/IIay%20(1).jpg?v=1737649496972",
+        name: "IIay_1.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/4c7f73be-c063-4e27-8c03-7d34c4d9e1ab.jpg?v=1737649487611",
+        name: "4c7f73be.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(9).jpg?v=1737649482938",
+        name: "Ilay_Riegrow_9.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(10).jpg?v=1737649476423",
+        name: "Ilay_Riegrow_10.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20(11).jpg?v=1737649471738",
+        name: "Ilay_Riegrow_11.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20%5B%20Passion%20%5D.jpg?v=1737649466234",
+        name: "Ilay_Riegrow_Passion.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/%F0%9D%90%8F%F0%9D%90%80%F0%9D%90%92%F0%9D%90%92%F0%9D%90%88%F0%9D%90%8E%F0%9D%90%8D%20%E2%99%A1.jpg?v=1737649462227",
+        name: "Special_Heart.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/d5215b74-7741-4670-9eb7-f11a573eae10.jpg?v=1737649456776",
+        name: "d5215b74.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/11127d3d-1862-43d3-b447-9cd56c9731e1.jpg?v=1737649452517",
+        name: "11127d3d.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/manhwa%20boy.jpg?v=1737649451912",
+        name: "Manhwa_Boy.jpg",
+      },
+      {
+        src: "https://cdn.glitch.global/d3ca0966-dd93-4594-9380-a473a8a175a1/Ilay%20Riegrow%20%5B%20Passion%20-%20Manhwa%20%5D.jpg?v=1737649447357",
+        name: "Ilay_Riegrow_Passion_Manhwa.jpg",
+      },
+    ];
+
+    newImages.forEach((image) => {
+      document.write(`
+        <div class="gallery-item">
+          <div class="image-container">
+            <img src="${image.src}" alt="Image">
+            <a href="#" 
+               class="icon download-icon" 
+               aria-label="Télécharger" 
+               onclick="downloadFile('${image.src}', '${image.name}')">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      `);
+    });
+
+    function downloadFile(url, filename) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.click();
+    }
+  </script>
+</div>
+   
+
+  </section>
+<button id="shuffle-icon" aria-label="Shuffle Gallery">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M403.8 34.4c12-5 25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-64 64c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6l0-32-32 0c-10.1 0-19.6 4.7-25.6 12.8L284 229.3 244 176l31.2-41.6C293.3 110.2 321.8 96 352 96l32 0 0-32c0-12.9 7.8-24.6 19.8-29.6zM164 282.7L204 336l-31.2 41.6C154.7 401.8 126.2 416 96 416l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c10.1 0 19.6-4.7 25.6-12.8L164 282.7zm274.6 188c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6l0-32-32 0c-30.2 0-58.7-14.2-76.8-38.4L121.6 172.8c-6-8.1-15.5-12.8-25.6-12.8l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c30.2 0 58.7 14.2 76.8 38.4L326.4 339.2c6 8.1 15.5 12.8 25.6 12.8l32 0 0-32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-64 64z"/>
+    </svg>
+</button>
+
+
+</main>
+  
+  
+   <footer>
+        <p>&copy; 2025 Kristen Loves Ilay. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js" > </script>
+  
+</body>
+</html>

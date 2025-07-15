@@ -1,0 +1,411 @@
+.info-section {
+    padding: 2rem;
+    max-width: 800px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+      padding: 2rem;
+    margin: 2rem auto;
+  margin-top: -3%;
+}
+
+.info-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #001f3f; /* Bleu foncé */
+}
+
+.info-section h2 {
+    font-size: 1.8rem;
+  margin-top: 1.5rem;
+    color: #00509e; /* Bleu clair */
+}
+
+.info-section p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-align: justify;
+}
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s; /* Transition douce pour le mode sombre */
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo à gauche, icône de thème à droite */
+    background: #001f3f; /* Bleu foncé */
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    margin-right: auto; /* Garde le logo à l'extrême gauche */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Liens de navigation */
+header nav ul.nav-links {
+    flex-grow: 1; /* Permet aux liens de navigation de rester centrés */
+    display: flex;
+    justify-content: center; /* Centre les 4 liens de navigation */
+    gap: 1rem; /* Réduit l'espace entre chaque lien */
+}
+
+header nav ul.nav-links li {
+    margin: 0; /* Aucun espace supplémentaire autour des liens */
+}
+
+header nav ul.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul.nav-links a:hover {
+    color: #00509e; /* Bleu clair */
+}
+header nav ul.nav-links a.active {
+    color: #00509e; /* Couleur du lien actif */
+    font-weight: bold; /* Texte en gras */
+    transform: scale(1.2); /* Effet d'agrandissement */
+    text-decoration: none;
+}
+
+/* Icône pour changer le thème */
+.theme-toggle {
+    margin-left: auto; /* Garde l'icône de thème à l'extrême droite */
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.theme-toggle button:hover svg {
+    transform: scale(1.2);
+    color: #00509e; /* Bleu clair */
+}
+
+.icon.hidden {
+    display: none; /* Masque l'icône inactive */
+}
+/* Carrousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 400px;
+    margin: auto;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1; /* Seules les diapositives actives sont visibles */
+    position: relative; /* Place l'image active au bon endroit */
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*remplace cover par contain si tu veux adaptation*/
+    object-position: center;
+    background-color: #e0e0e0; /* Fond visible si l'image manque */
+}
+
+
+
+
+.carousel-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 31, 63, 0.7); /* Bleu foncé transparent */
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+.overlay-text {
+    position: absolute; /* Superposé à l'image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem; /* Taille du texte */
+    color: rgba(255, 255, 255, 0.7); /* Texte blanc semi-transparent */
+    font-weight: bold;
+    text-transform: uppercase; /* Texte en majuscule */
+    pointer-events: none; /* Le texte n'interfère pas avec les clics */
+}
+
+
+.carousel-container .prev {
+    left: 10px;
+}
+
+.carousel-container .next {
+    right: 10px;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #00509e; /* Bleu clair */
+}
+
+/* Sections */
+section {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #001f3f; /* Bleu foncé */
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Mode sombre */
+body.dark-theme {
+    background-color:#1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark-theme header nav {
+    background-color: #333333;
+}
+
+body.dark-theme .logo {
+    color: #ffcc00; /* Différent pour le mode sombre */
+}
+
+body.dark-theme section {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+body.dark-theme .info-section {
+    background-color: #333333; /* Fond noir plus clair */
+}
+body.dark-theme .gallery img {
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+body.dark-theme .info-section h1,
+body.dark-theme .info-section h2 {
+    color: #ffcc00; /* Titres avec une couleur distincte (jaune) */
+}
+
+body.dark-theme .info-section p {
+    color: #dcdcdc; /* Texte légèrement plus clair pour la lisibilité */
+}
+
+
+/* Affiche uniquement le premier nav sur les grands écrans */
+@media (min-width: 1001px) {
+    .nav-links {
+        display: flex; /* Affiche le menu principal */
+        justify-content: center; /* Centre les liens */
+        gap: 1rem; /* Ajoute de l'espace entre les liens */
+    }
+    .menu-toggle, #myNav {
+        display: none; /* Cache le toggle et l'overlay */
+    }
+    header nav {
+        flex-wrap: nowrap; /* Préserve une seule ligne pour la navigation */
+    }
+    body {
+        overflow-x: visible; /* Pas de défilement horizontal nécessaire sur les grands écrans */
+    }
+}
+@media (max-width: 1000px) {
+  
+   .nav-links {
+        display: none !important; /* Cache le menu principal sur petits écrans */
+    }
+  .menu-toggle {
+         cursor: pointer;
+       font-size: 1.7rem;
+    background: none;
+    color:white;
+     border: none;
+    
+       
+    }
+  .theme-toggle button{
+    margin-right:20px;
+  }
+   
+    #myNav {
+        display: none; /* Cache l'overlay par défaut */
+    }
+
+    #myNav.open {
+        display: flex; /* Affiche l'overlay lorsqu'il est actif */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.95); /* Fond noir semi-transparent */
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Assure que l'overlay passe au-dessus du contenu */
+    }
+
+    #myNav .overlay-content a {
+         padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    #myNav .overlay-content a:hover {
+        color: #00509e; /* Change la couleur des liens au survol */
+    }
+  .closebtn {
+    position: fixed;
+    top:10px;
+    right:30px;
+    font-size: 60px;
+    color: #f1f1f1;
+    background:none;
+    border:none;
+}
+  html, body {
+        width: 100%; /* Assure que le contenu respecte la largeur de l'écran */
+        overflow-x: hidden; /* Supprime le défilement horizontal */
+    }
+
+    .carousel-container {
+        width: 100%; /* Adapte la largeur du carrousel */
+        overflow: hidden; /* Empêche les débordements visibles */
+    }
+
+    .gallery-item {
+        width: calc(100% - 2rem); /* Limite la largeur des éléments pour s'adapter à l'écran */
+        margin: 1rem auto; /* Centrer les éléments */
+    }
+
+
+}
+
+
+/* Shuffle button */
+.shuffle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    margin: 15px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.shuffle-btn:hover {
+    background-color: #0056b3;
+}

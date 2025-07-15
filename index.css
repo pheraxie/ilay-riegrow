@@ -1,0 +1,631 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s; /* Transition douce pour le mode sombre */
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo à gauche, icône de thème à droite */
+    background: #001f3f; /* Bleu foncé */
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    margin-right: auto; /* Garde le logo à l'extrême gauche */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Liens de navigation */
+header nav ul.nav-links {
+    flex-grow: 1; /* Permet aux liens de navigation de rester centrés */
+    display: flex;
+    justify-content: center; /* Centre les 4 liens de navigation */
+    gap: 1rem; /* Réduit l'espace entre chaque lien */
+}
+
+header nav ul.nav-links li {
+    margin: 0; /* Aucun espace supplémentaire autour des liens */
+}
+
+header nav ul.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; 
+}
+
+header nav ul.nav-links a:hover {
+    color: #00509e; /* Bleu clair */
+    transform: scale(1.1);
+}
+header nav ul.nav-links a.active {
+    color: #00509e; /* Couleur du lien actif */
+    font-weight: bold; /* Texte en gras */
+    transform: scale(4.2); /* Effet d'agrandissement */
+    text-decoration: none;
+}
+
+
+/* Icône pour changer le thème */
+.theme-toggle {
+    margin-left: auto; /* Garde l'icône de thème à l'extrême droite */
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.theme-toggle button:hover svg {
+    transform: scale(1.2);
+    color: #00509e; /* Bleu clair */
+}
+
+.icon.hidden {
+    display: none; /* Masque l'icône inactive */
+}
+/* Carrousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 400px;
+    margin: auto;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1; /* Seules les diapositives actives sont visibles */
+    position: relative; /* Place l'image active au bon endroit */
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*remplace cover par contain si tu veux adaptation*/
+    object-position: center;
+    background-color: #e0e0e0; /* Fond visible si l'image manque */
+}
+
+
+
+
+.carousel-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 31, 63, 0.7); /* Bleu foncé transparent */
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+.overlay-text {
+    position: absolute; /* Superposé à l'image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem; /* Taille du texte */
+    color: rgba(255, 255, 255, 0.7); /* Texte blanc semi-transparent */
+    font-weight: bold;
+    text-transform: uppercase; /* Texte en majuscule */
+    pointer-events: none; /* Le texte n'interfère pas avec les clics */
+}
+
+
+.carousel-container .prev {
+    left: 10px;
+}
+
+.carousel-container .next {
+    right: 10px;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #00509e; /* Bleu clair */
+}
+
+/* Sections */
+section {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #001f3f; /* Bleu foncé */
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Mode sombre */
+body.dark-theme {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-theme header nav {
+    background-color: #333333;
+}
+
+body.dark-theme .logo {
+    color: #ffcc00; /* Différent pour le mode sombre */
+}
+
+body.dark-theme section {
+    background-color: #1e1e1e;
+    color:#1e1e1e;
+}
+
+body.dark-theme .gallery img {
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  
+}
+body.dark-theme .gallery-item {
+    background-color: #333333; /* Noir clair */
+    
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Ombre adaptée au mode sombre */
+}
+body.dark-theme .description {
+    color: #ffffff; /* Blanc pour le mode sombre */
+}
+
+
+#gallery-container {
+    position: relative;
+    gap:2vw ; /* Définit l'espacement entre les éléments */
+    padding: 20px; /* Ajoute un espacement autour de la galerie */
+    margin: 0 auto; /* Centre la galerie horizontalement */
+    max-width: 1200px; /* Largeur maximale pour limiter la taille de la galerie */
+    box-sizing: border-box; /* Inclut les bordures et les paddings dans la taille totale */
+    align-items: start; /* Aligne les éléments en haut pour un rendu compact */
+  
+}
+
+.gallery-item {
+    background-color: #ffffff; /* Couleur de fond pour chaque conteneur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    overflow: hidden; /* Évite les débordements */
+    padding: 10px; /* Ajoute un espacement interne */
+    height: auto; /* Ajuste la hauteur automatiquement */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%; /* Ajuste l'image à la largeur du conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    display: block; /* Supprime les espaces blancs autour de l'image */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre */
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+}
+
+.icon-overlay {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #f8f8f8;
+}
+
+.icon:not(.theme-toggle .icon) {
+    cursor: pointer;
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  outline: none; /* Supprime tout contour */
+   border: none;           /* Supprime toute bordure */
+    outline: none;          /* Supprime tout contour */
+    box-shadow: none;       /* Supprime toute ombre */
+}
+
+.icon:hover {
+    
+    transform: scale(1.1);
+}
+
+
+/* Icônes SVG (Téléchargement et enregistrement) */
+.icon svg {
+    width: 16px; /* Taille de l'icône */
+    height: 16px; /* Taille de l'icône */
+    fill: #000; /* Couleur de l'icône */
+    transition: fill 0.3s ease; /* Animation de la couleur */
+  stroke: none;
+  
+}
+.download-icon svg {
+    fill: #000000 !important; /* Forcer la couleur noire */
+    stroke: none; /* Supprimer tout contour */
+}
+
+
+.icon:hover svg {
+    fill: #000; /* Couleur de l'icône au survol */
+}
+
+
+
+
+/* Déplacer l'icône "Télécharger" en bas à droite de l'image */
+.image-container {
+  position: relative;
+}
+
+.download-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #00509e;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.3s ease;
+  color:black;
+}
+
+.download-icon:hover {
+  background: #003f7f;
+  transform: scale(1.1);
+}
+
+.download-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+/* Modale pour l'affichage en plein écran */
+.modal {
+  display: none; /* Masqué par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Fond noir semi-transparent */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+  display: flex; /* Affiche la modale */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1001;
+  transition: background 0.3s ease;
+}
+
+.modal .arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal .arrow.left {
+  left: 5%;
+}
+
+.modal .arrow.right {
+  right: 5%;
+}
+/* Bouton de fermeture (croix) */
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Déplace la croix en haut à droite */
+  font-size: 1.5rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1001;
+  transition: background 0.3s ease;
+}
+
+.modal .close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.gallery-item {
+    transition: all 0.3s ease-in-out;
+}
+/* Affiche uniquement le premier nav sur les grands écrans */
+@media (min-width: 1001px) {
+    .nav-links {
+        display: flex; /* Affiche le menu principal */
+        justify-content: center; /* Centre les liens */
+        gap: 1rem; /* Ajoute de l'espace entre les liens */
+      
+    }
+ 
+    .menu-toggle, #myNav {
+        display: none; /* Cache le toggle et l'overlay */
+    }
+    header nav {
+        flex-wrap: nowrap; /* Préserve une seule ligne pour la navigation */
+    }
+    body {
+        overflow-x: visible; /* Pas de défilement horizontal nécessaire sur les grands écrans */
+    }
+}
+@media (max-width: 1000px) {
+  
+   .nav-links {
+        display: none !important; /* Cache le menu principal sur petits écrans */
+    }
+  .menu-toggle {
+         cursor: pointer;
+       font-size: 1.7rem;
+    background: none;
+    color:white;
+     border: none;
+    
+       
+    }
+  .theme-toggle button{
+    margin-right:20px;
+  }
+   
+    #myNav {
+        display: none; /* Cache l'overlay par défaut */
+    }
+
+    #myNav.open {
+        display: flex; /* Affiche l'overlay lorsqu'il est actif */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.95); /* Fond noir semi-transparent */
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Assure que l'overlay passe au-dessus du contenu */
+    }
+
+    #myNav .overlay-content a {
+         padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    #myNav .overlay-content a:hover {
+        color: #00509e; /* Change la couleur des liens au survol */
+    }
+  .closebtn {
+    position: fixed;
+    top:10px;
+    right:30px;
+    font-size: 60px;
+    color: #f1f1f1;
+    background:none;
+    border:none;
+}
+  html, body {
+        width: 100%; /* Assure que le contenu respecte la largeur de l'écran */
+        overflow-x: hidden; /* Supprime le défilement horizontal */
+    }
+
+    .carousel-container {
+        width: 100%; /* Adapte la largeur du carrousel */
+        overflow: hidden; /* Empêche les débordements visibles */
+    }
+
+    .gallery-item {
+        width: calc(100% - 2rem); /* Limite la largeur des éléments pour s'adapter à l'écran */
+        margin: 1rem auto; /* Centrer les éléments */
+    }
+
+
+}
+@media (max-width: 660px) {
+    .carousel-container {
+        width: 100vw; /* Assure que le conteneur occupe toute la largeur visible de l'écran */
+        height: 220px; /* Ajuste la hauteur */
+        margin: 0 !important; /* Supprime les marges externes */
+        padding: 0 !important; /* Supprime les paddings */
+    }
+
+    .carousel {
+        width: 100%; /* Le carrousel occupe toute la largeur */
+        height: 100%; /* Remplit la hauteur du conteneur */
+        margin: 0 !important; /* Supprime toute marge externe */
+        padding: 0 !important; /* Supprime tout padding */
+    }
+
+    .slide {
+        width: 100%; /* Les diapositives remplissent la largeur */
+        height: 100%; /* Les diapositives remplissent la hauteur */
+        margin: 0 !important; /* Aucune marge externe */
+        padding: 0 !important; /* Aucune marge interne */
+    }
+
+    .slide img {
+        width: 100vw !important; /* Force l'image à occuper toute la largeur visible */
+        height: 100% !important; /* Adapte la hauteur au conteneur */
+        object-fit: cover; /* Garde l'image bien ajustée */
+        margin: 0 !important; /* Supprime toute marge éventuelle */
+        padding: 0 !important; /* Supprime tout padding */
+    }
+
+    .carousel-container button {
+        padding: 0.4rem;
+        font-size: 0.8rem; /* Taille réduite des boutons */
+    }
+
+    .carousel-container .prev {
+        left: 5px !important;
+    }
+
+    .carousel-container .next {
+        right: 5px !important;
+    }
+}
+#shuffle-icon {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #007bff; /* Bleu lumineux */
+    color: #ffffff; /* Icône blanche */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 1000;
+    user-select: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#shuffle-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+#shuffle-icon:hover {
+    transform: scale(1.2); /* Légèrement plus grand au survol */
+    background-color: #0056b3; /* Couleur plus foncée */
+}
+
+#shuffle-icon:active {
+    transform: scale(1); /* Réduction temporaire lors du clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
